@@ -19,7 +19,6 @@ function Content() {
           }).catch((error) => {
             console.log(error);;
           });
-
     }
 
 

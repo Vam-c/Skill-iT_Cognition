@@ -13,6 +13,7 @@ function Deliver(){
     //..\frontend\skill-it\public\videos
     link = link.replace("..\\frontend\\skill-it\\public\\videos\\", "");
     //update views after clicking on link.
+    //frontend\skill-it\public\1659775758203video.mp4
     console.log(link);
     return(
         <div>

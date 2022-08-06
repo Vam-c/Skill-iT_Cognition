@@ -27,7 +27,7 @@ function Video(props){
             <ListGroup.Item>Views: {props.views}</ListGroup.Item>
             </ListGroup>
             <Card.Body>
-                <button className="card-button" onClick={handleClick}>Subscribe</button>
+                <button className="card-button" >Subscribe</button>
             </Card.Body>
             </Card>
         </div>
