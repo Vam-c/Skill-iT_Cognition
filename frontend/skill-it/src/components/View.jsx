@@ -14,7 +14,6 @@ function View(){
 
     return(
         <div>
-            <h1>View page</h1>
                 <div className="row">
                 {videos.map( video => <Video 
                     key={video._id}

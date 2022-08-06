@@ -10,7 +10,7 @@ function Video(props){
     return(
             // style={{width: "100%", height: "300px", objectFit: "cover"}}  />
     
-        <div className="col-md-4" style={{padding: "3%"}}>
+        <div className="col-md-3" style={{padding: "3%"}}>
             <Card style={{ width: '18rem' }}>
             <Link to={`/watch/?link=${props.link}`} state={{videoId: props.id}} >
                 <Card.Img variant="top" src={`http://localhost:3000/videothumbnail?link=${props.link}`} alt="thumbnail" />
@@ -18,7 +18,7 @@ function Video(props){
             <Card.Body>
             <Card.Title>{props.name}</Card.Title>
             <Card.Text>
-                {props.description}
+                {props.description.substring(0,50)}...
             </Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
