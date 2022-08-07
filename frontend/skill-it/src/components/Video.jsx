@@ -7,7 +7,6 @@ import axios from "axios";
 function Video(props){
     var link = props.link;
     link = link.replace("..\\frontend\\skill-it\\public\\videos\\", "");
-
     function updateViews() {
         axios.put("http://localhost:3000/view-update/" + props.id)
         .then( res => {
@@ -22,7 +21,7 @@ function Video(props){
     return(
         <div className="col-md-3" style={{padding: "3%"}}>
             <Card style={{ width: '18rem' }}>
-            <Link to={`/watch/?link=${props.link}`} state={{videoName: props.name}} >
+            <Link to={`/watch/?link=${props.link}`} state={{props}} >
                 <video onClick={updateViews} className="thumbnail" src={"videos/" + link}></video>
             </Link>
             <Card.Body>

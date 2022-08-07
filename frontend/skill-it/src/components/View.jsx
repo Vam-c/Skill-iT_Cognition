@@ -24,6 +24,9 @@ function View(){
                     dateOfUpload={video.dateOfUpload.substring(0,10)}
                     views={video.views}    
                     instructor={video.instructor}
+                    contact={video.contact}
+                    email={video.email}
+                    consent={video.consent}
                 />)}
 
                 </div>

@@ -34,7 +34,8 @@ const contentSchema = new mongoose.Schema({
     },
     instructor: String,
     email: String,
-    contact: String
+    contact: String,
+    consent: String
   });
 
 const Content = mongoose.model("Content", contentSchema);
@@ -60,7 +61,10 @@ app.post("/upload", upload.single("video_file"), function(req, res){
         link: req.file.path,
         description: req.body.description,
         dateOfUpload: date,
-        instructor: req.body.instructor
+        instructor: req.body.instructor,
+        email: req.body.email,
+        contact: req.body.contact,
+        consent: req.body.consent
     });
     newVideo.save(function(err){
       if(err){

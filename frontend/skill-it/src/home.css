@@ -33,7 +33,11 @@
   .header{
     background-color: gainsboro;
   }
-  
+  .desc{
+    position: relative;
+    top: 20%;
+    left: 30%;
+  }
   .carousel-container{
     width: 500px;
     display: inline-block;
@@ -81,4 +85,10 @@
     70%{
         clip-path: polygon(0 0,100% 0,100% 56%,0 24%);
     }
+  }
+
+  .form-header{
+    font-family: 'Alumni Sans Inline One', cursive;
+    font-size: 60px;
+    margin-bottom: 20px;
   }
