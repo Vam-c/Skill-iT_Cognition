@@ -8,7 +8,7 @@ function Content() {
         event.preventDefault();
         const form  = document.getElementById('upload-form');
         const formData = new FormData(form);
-        instructorName = [...formData.values()][4];
+        instructorName = [...formData.values()][3];
         // console.log([...formData.entries()]);
 
         axios.post("http://localhost:3000/upload", formData, {
@@ -41,7 +41,7 @@ function Content() {
             <input required name="email" type="email" className="form-control" id="email" placeholder="Email" />
         </div><br />
         <div className="form-group">
-            <input style={{marginRight: "7px"}} required name="consent" className="form-check-input" type="checkbox" id="consent" />
+            <input style={{marginRight: "7px"}} name="consent" className="form-check-input" type="checkbox" id="consent" />
             <label for="consent"> Share your contact details with your audience?</label>
         </div><br />
       </div>

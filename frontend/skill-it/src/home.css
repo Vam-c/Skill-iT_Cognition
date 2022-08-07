@@ -51,7 +51,7 @@
   }
   .floating-text{
     position: absolute;
-    bottom: 300px;
+    bottom: 200px;
     font-size: 80px;
     font-family: 900;
     letter-spacing: 5px;
