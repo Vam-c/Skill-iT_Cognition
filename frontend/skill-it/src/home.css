@@ -1,0 +1,84 @@
+.quote{
+  display: inline;
+  text-align: center;
+  font-family: 'Alumni Sans Inline One', cursive;
+  font-size: 4.5rem;
+  position: absolute;
+  padding-left: 7%;
+  padding-top: 7%;
+  }
+  .thumbnail{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: 0% 90%;
+  }
+  .video-container{
+    font-family: 'Alumni Sans Inline One', cursive;
+    padding: 3% 6%;
+  }
+  .video-title{
+    margin-left: 20px;
+    font-family: monospace;
+    font-size: 40px;
+  }
+  .nav-button{
+    border-radius: 20px;
+    margin-left: 30px !important;
+  }
+  .nav-button:hover{
+    background-color: aliceblue;
+    color: black !important;
+  }
+  .header{
+    background-color: gainsboro;
+  }
+  
+  .carousel-container{
+    width: 500px;
+    display: inline-block;
+  }
+  .background-thanks{
+    height: 669px;
+    background-color: #273e4a;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .floating-text{
+    position: absolute;
+    bottom: 300px;
+    font-size: 80px;
+    font-family: 900;
+    letter-spacing: 5px;
+    color:  #48c9b0;
+    transform: translateY(0);
+    animation: f11 3s infinite linear;
+}
+
+.floating-text::before{
+    content: attr(data-text);
+    position: absolute;
+    color:  #48c9b0;
+    clip-path: polygon(0 0,50% 0,50% 50%,0 50%);
+    animation: f12 3s infinite linear;
+}
+
+
+@keyframes f11{
+    30%{
+        transform: translateY(10%) rotate(4deg);
+    }
+    70%{
+        transform: translateY(10%) rotate(-4deg);
+    }
+}
+
+@keyframes f12{
+    30%{
+        clip-path: polygon(0 0,100% 0,100% 24%,0 56%);
+    }
+    70%{
+        clip-path: polygon(0 0,100% 0,100% 56%,0 24%);
+    }
+  }

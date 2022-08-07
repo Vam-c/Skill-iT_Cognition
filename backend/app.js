@@ -71,8 +71,15 @@ app.post("/upload", upload.single("video_file"), function(req, res){
     });
 });
 
-app.get("/play-video", function(req, res){
-
+app.put("/view-update/:videoId", function(req, res){
+  Content.findById(req.params.videoId, function(err, returnedVideo){
+    if(err){
+      console.log(err);
+    } else {
+      returnedVideo.views++;
+      returnedVideo.save();
+    }
+  });
 });
 app.listen(3000, function(){
     console.log("Server running on port 3000");

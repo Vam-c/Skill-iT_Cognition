@@ -1,19 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import axios from "axios";
 
 function Video(props){
-  //add subscribe functionality
-    
+    var link = props.link;
+    link = link.replace("..\\frontend\\skill-it\\public\\videos\\", "");
+
+    function updateViews() {
+        axios.put("http://localhost:3000/view-update/" + props.id)
+        .then( res => {
+            console.log(res);
+        })
+        .catch( err => {
+            console.log("Error occured while updating views");
+            console.log(err);
+        });
+    }
+
     return(
-            // style={{width: "100%", height: "300px", objectFit: "cover"}}  />
-    
         <div className="col-md-3" style={{padding: "3%"}}>
             <Card style={{ width: '18rem' }}>
-            <Link to={`/watch/?link=${props.link}`} state={{videoId: props.id}} >
-                <Card.Img variant="top" src={`http://localhost:3000/videothumbnail?link=${props.link}`} alt="thumbnail" />
+            <Link to={`/watch/?link=${props.link}`} state={{videoName: props.name}} >
+                <video onClick={updateViews} className="thumbnail" src={"videos/" + link}></video>
             </Link>
             <Card.Body>
             <Card.Title>{props.name}</Card.Title>
@@ -26,9 +36,6 @@ function Video(props){
             <ListGroup.Item>Uploaded on: {props.dateOfUpload}</ListGroup.Item>
             <ListGroup.Item>Views: {props.views}</ListGroup.Item>
             </ListGroup>
-            <Card.Body>
-                <button className="card-button" >Subscribe</button>
-            </Card.Body>
             </Card>
         </div>
     )
